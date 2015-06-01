@@ -1,0 +1,53 @@
+<idea-plugin version="2">
+	<id>me.tomassetti.asttransf.idea</id>
+	<name>AstTransformationsDsl Support</name>
+	<description>
+      This plugin enables smart editing of AstTransformationsDsl files.
+	</description>
+	<version>1.0.0</version>
+	<vendor>My Company</vendor>
+
+	<idea-version since-build="131"/>
+	<depends>org.eclipse.xtext.idea</depends>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<buildProcess.parametersProvider implementation="me.tomassetti.idea.server.AstTransformationsDslBuildProcessParametersProvider"/>
+
+		<stubIndex implementation="org.eclipse.xtext.psi.stubindex.ExportedObjectQualifiedNameIndex"/>
+
+		<psi.treeChangePreprocessor implementation="me.tomassetti.idea.lang.psi.AstTransformationsDslCodeBlockModificationListener"/>
+
+		<fileTypeFactory implementation="me.tomassetti.idea.lang.AstTransformationsDslFileTypeFactory"/>
+		<stubElementTypeHolder class="me.tomassetti.idea.lang.AstTransformationsDslElementTypeProvider"/>
+		<lang.ast.factory language="me.tomassetti.AstTransformationsDsl"
+								factoryClass="me.tomassetti.idea.AstTransformationsDslExtensionFactory"
+								implementationClass="org.eclipse.xtext.idea.lang.BaseXtextASTFactory"/>
+		<lang.parserDefinition language="me.tomassetti.AstTransformationsDsl"
+								factoryClass="me.tomassetti.idea.AstTransformationsDslExtensionFactory"
+								implementationClass="me.tomassetti.idea.lang.parser.AstTransformationsDslParserDefinition"/>
+		<lang.findUsagesProvider language="me.tomassetti.AstTransformationsDsl"
+								factoryClass="me.tomassetti.idea.AstTransformationsDslExtensionFactory"
+								implementationClass="org.eclipse.xtext.idea.findusages.BaseXtextFindUsageProvider"/>
+		<lang.refactoringSupport language="me.tomassetti.AstTransformationsDsl"
+								factoryClass="me.tomassetti.idea.AstTransformationsDslExtensionFactory"
+								implementationClass="org.eclipse.xtext.idea.refactoring.BaseXtextRefactoringSupportProvider"/>
+		<lang.namesValidator language="me.tomassetti.AstTransformationsDsl"
+								factoryClass="me.tomassetti.idea.AstTransformationsDslExtensionFactory"
+								implementationClass="com.intellij.lang.refactoring.NamesValidator"/>
+      	<lang.syntaxHighlighterFactory key="me.tomassetti.AstTransformationsDsl" implementationClass="me.tomassetti.idea.lang.AstTransformationsDslSyntaxHighlighterFactory" />
+		<lang.braceMatcher language="me.tomassetti.AstTransformationsDsl"
+								factoryClass="me.tomassetti.idea.AstTransformationsDslExtensionFactory"
+								implementationClass="com.intellij.lang.PairedBraceMatcher"/>
+      	<annotator language="me.tomassetti.AstTransformationsDsl"
+      							factoryClass="me.tomassetti.idea.AstTransformationsDslExtensionFactory"
+      							implementationClass="org.eclipse.xtext.idea.annotation.IssueAnnotator"/>
+      	<completion.contributor language="me.tomassetti.AstTransformationsDsl" implementationClass="me.tomassetti.idea.completion.AstTransformationsDslCompletionContributor"/>
+      	<elementDescriptionProvider implementation="me.tomassetti.idea.lang.psi.AstTransformationsDslElementDescriptionProvider" order="first"/>
+      	<pom.declarationSearcher implementation="me.tomassetti.idea.lang.pom.AstTransformationsDslPomDeclarationSearcher"/>
+
+      	<lang.psiStructureViewFactory language="me.tomassetti.AstTransformationsDsl"
+      							factoryClass="me.tomassetti.idea.AstTransformationsDslExtensionFactory"
+      							implementationClass="com.intellij.lang.PsiStructureViewFactory"/>
+	</extensions>
+
+</idea-plugin>

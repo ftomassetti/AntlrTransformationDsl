@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: me.tomassetti.asttransf.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: me.tomassetti.asttransf.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: me.tomassetti.asttransf,
+ org.eclipse.xtext.ide;visibility:=reexport
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: me.tomassetti.ide.contentassist.antlr,
+ me.tomassetti.ide.contentassist.antlr.internal

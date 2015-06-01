@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/me.tomassetti.asttransf/src-gen" editDirectory="/me.tomassetti.asttransf.edit/src"
+    editorDirectory="/me.tomassetti.asttransf.editor/src" modelPluginID="me.tomassetti.asttransf"
+    forceOverwrite="true" modelName="AstTransformationsDsl" updateClasspath="false"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="6.0"
+    copyrightFields="false" editPluginID="me.tomassetti.asttransf.edit" editorPluginID="me.tomassetti.asttransf.editor"
+    runtimeVersion="2.11">
+  <genPackages prefix="AstTransformationsDsl" basePackage="me.tomassetti" disposableProviderFactory="true"
+      fileExtensions="asttr" ecorePackage="AstTransformationsDsl.ecore#/">
+    <genClasses ecoreClass="AstTransformationsDsl.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AstTransformationsDsl.ecore#//Model/antlr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AstTransformationsDsl.ecore#//Model/declarations"/>
+    </genClasses>
+    <genClasses ecoreClass="AstTransformationsDsl.ecore#//AntlrGrammarRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AstTransformationsDsl.ecore#//AntlrGrammarRef/grammarFile"/>
+    </genClasses>
+    <genClasses ecoreClass="AstTransformationsDsl.ecore#//Declaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AstTransformationsDsl.ecore#//Declaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AstTransformationsDsl.ecore#//NamedEnumDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AstTransformationsDsl.ecore#//NamedEnumDeclaration/values"/>
+    </genClasses>
+    <genClasses ecoreClass="AstTransformationsDsl.ecore#//UnnamedEnumDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AstTransformationsDsl.ecore#//UnnamedEnumDeclaration/values"/>
+    </genClasses>
+    <genClasses ecoreClass="AstTransformationsDsl.ecore#//NodeType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AstTransformationsDsl.ecore#//NodeType/superType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AstTransformationsDsl.ecore#//NodeType/antlrNode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AstTransformationsDsl.ecore#//NodeType/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="AstTransformationsDsl.ecore#//NodeTypeField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AstTransformationsDsl.ecore#//NodeTypeField/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AstTransformationsDsl.ecore#//NodeTypeField/many"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AstTransformationsDsl.ecore#//NodeTypeField/optional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AstTransformationsDsl.ecore#//NodeTypeField/single"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AstTransformationsDsl.ecore#//NodeTypeField/value"/>
+    </genClasses>
+    <genClasses ecoreClass="AstTransformationsDsl.ecore#//NodeTypeFieldValue"/>
+    <genClasses ecoreClass="AstTransformationsDsl.ecore#//EnumNodeTypeFieldValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AstTransformationsDsl.ecore#//EnumNodeTypeFieldValue/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AstTransformationsDsl.ecore#//RelationNodeTypeField">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AstTransformationsDsl.ecore#//RelationNodeTypeField/type"/>
+    </genClasses>
+    <genClasses ecoreClass="AstTransformationsDsl.ecore#//AttributeNodeTypeField"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,44 @@
+plugins {
+	id 'org.xtend.xtend' version '0.4.7'
+	id 'org.xtext.idea-plugin' version '0.3.17'
+	id 'eclipse'
+}
+
+dependencies {
+	compile project(':me.tomassetti.asttransf')
+	compile project(':me.tomassetti.asttransf.ide')
+}
+
+ideaDevelopment {
+	ideaVersion = '141.814.3'
+	pluginRepositories {
+		url 'http://download.eclipse.org/modeling/tmf/xtext/idea/2.9.0.beta2/updatePlugins.xml'
+	}
+	pluginDependencies {
+		id 'org.eclipse.xtext.idea' version '2.9.0.beta2'
+	}
+}
+
+sourceSets.main.xtendOutputDir = 'xtend-gen'
+
+allprojects {
+	repositories { 
+		jcenter()
+	}
+	apply plugin: 'java'
+	sourceSets.main.java.srcDirs = ['src', 'src-gen', 'xtend-gen']
+	sourceSets.main.resources.srcDirs = ['src', 'src-gen']
+}
+
+configure(project(':me.tomassetti.asttransf')) {
+	dependencies {
+		compile 'org.eclipse.xtext:org.eclipse.xtext.common.types:2.9.0.beta2'
+	}
+}
+
+configure(project('me.tomassetti.asttransf.ide')) {
+	dependencies { 
+		compile project(':me.tomassetti.asttransf')
+		compile 'org.eclipse.xtext:org.eclipse.xtext.ide:2.9.0.beta2' 
+	}
+}

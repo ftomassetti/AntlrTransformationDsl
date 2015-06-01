@@ -1,0 +1,51 @@
+plugins {
+	id 'org.xtend.xtend' version '0.4.7'
+	id 'eclipse'
+	id 'war'
+}
+
+sourceSets.main.xtendOutputDir = 'src/main/xtend-gen'
+
+dependencies {
+	compile group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib', version: '2.9.0.beta2'
+	compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.web.servlet', version: '2.9.0.beta2'
+	compile project(':me.tomassetti.asttransf')
+	compile project(':me.tomassetti.asttransf.ide')
+	compile group: 'org.webjars', name: 'requirejs', version: '2.1.17'
+	compile group: 'org.webjars', name: 'requirejs-text', version: '2.0.10-3'
+	compile group: 'org.webjars', name: 'jquery', version: '2.1.4'
+	providedCompile group: 'org.eclipse.jetty', name: 'jetty-annotations', version: '9.2.+'
+	providedCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.+'
+}
+
+task jettyRun(type:JavaExec) {
+	dependsOn(sourceSets.main.runtimeClasspath)
+	classpath = sourceSets.main.runtimeClasspath.filter{it.exists()}
+	main = "me.tomassetti.web.ServerLauncher"
+	standardInput = System.in
+}
+
+allprojects {
+	repositories {
+		jcenter()
+	}
+}
+
+subprojects {
+	apply plugin: 'java'
+	sourceSets.main.java.srcDirs = ['src', 'src-gen', 'xtend-gen']
+	sourceSets.main.resources.srcDirs = ['src', 'src-gen']
+}
+
+configure(project(':me.tomassetti.asttransf')) {
+	dependencies {
+		compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.common.types', version: '2.9.0.beta2'
+	}
+}
+
+configure(project(':me.tomassetti.asttransf.ide')) {
+	dependencies { 
+		compile project(':me.tomassetti.asttransf')
+		compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.ide', version: '2.9.0.beta2' 
+	}
+}

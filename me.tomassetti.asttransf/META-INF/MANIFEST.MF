@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: me.tomassetti.asttransf
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: me.tomassetti.asttransf; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.idea.generator,
+ org.eclipse.xtext.web.generator,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: me.tomassetti,
+ me.tomassetti.services,
+ me.tomassetti.astTransformationsDsl,
+ me.tomassetti.astTransformationsDsl.impl,
+ me.tomassetti.astTransformationsDsl.util,
+ me.tomassetti.serializer,
+ me.tomassetti.parser.antlr,
+ me.tomassetti.parser.antlr.internal,
+ me.tomassetti.validation,
+ me.tomassetti.scoping,
+ me.tomassetti.generator,
+ me.tomassetti.formatting
