@@ -3,6 +3,11 @@
  */
 package me.tomassetti;
 
+import org.antlr.runtime.*;
+import org.antlr.runtime.tree.Tree;
+import org.antlr.v4.parse.*;
+import org.antlr.v4.tool.ast.GrammarAST;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: me.tomassetti.asttransf
-Bundle-Vendor: My Company
+Bundle-Vendor: Federico Tomassetti
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: me.tomassetti.asttransf; singleton:=true
 Bundle-ActivationPolicy: lazy

@@ -11,4 +11,51 @@
   <artifactId>me.tomassetti.asttransf</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  
+  <dependencies>
+      <dependency>
+      <groupId>org.antlr</groupId>
+      <artifactId>antlr4-runtime</artifactId>
+      <version>4.5</version>
+    </dependency>
+      <dependency>
+          <groupId>org.antlr</groupId>
+          <artifactId>antlr4</artifactId>
+          <version>4.5</version>
+      </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.reficio</groupId>
+        <artifactId>p2-maven-plugin</artifactId>
+        <version>1.1.2-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <id>default-cli</id>
+            <configuration>
+              <artifacts>
+                <!-- specify your depencies here -->
+                <!-- groupId:artifactId:version -->
+                <artifact>
+                  <id>org.antlr:antlr4-runtime:4.5</id>
+                </artifact>
+                <artifact>
+                  <id>org.antlr:antlr4:4.5</id>
+                </artifact>
+              </artifacts>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!--<pluginRepositories>
+    <pluginRepository>
+      <id>reficio</id>
+      <url>http://repo.reficio.org/maven/</url>
+    </pluginRepository>
+  </pluginRepositories>-->
 </project>
