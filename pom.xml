@@ -7,16 +7,28 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-    <module>.metadata/.plugins/org.eclipse.pde.core/Launch Runtime Eclipse/org.eclipse.osgi/158/0/.cp</module>
+    <!--<module>.metadata/.plugins/org.eclipse.pde.core/Launch Runtime Eclipse/org.eclipse.osgi/158/0/.cp</module>
     <module>.metadata/.plugins/org.eclipse.pde.core/Launch Runtime Eclipse/org.eclipse.osgi/218/0/.cp</module>
     <module>.metadata/.plugins/org.eclipse.pde.core/Launch Runtime Eclipse/org.eclipse.osgi/257/0/.cp</module>
     <module>.metadata/.plugins/org.eclipse.pde.core/Launch Runtime Eclipse/org.eclipse.osgi/275/0/.cp</module>
-    <module>.metadata/.plugins/org.eclipse.pde.core/Launch Runtime Eclipse/org.eclipse.osgi/99/0/.cp</module>
+    <module>.metadata/.plugins/org.eclipse.pde.core/Launch Runtime Eclipse/org.eclipse.osgi/99/0/.cp</module>-->
     <module>me.tomassetti.asttransf</module>
     <module>me.tomassetti.asttransf.ide</module>
-    <module>me.tomassetti.asttransf.tests</module>
+    <!--<module>me.tomassetti.asttransf.tests</module>-->
     <module>me.tomassetti.asttransf.ui</module>
   </modules>
+  <repositories>
+    <repository>
+      <id>eclipse-luna</id>
+      <url>http://download.eclipse.org/releases/luna/</url>
+      <layout>p2</layout>
+    </repository>
+    <repository>
+      <id>xtext-updates</id>
+      <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones/</url>
+      <layout>p2</layout>
+    </repository>
+  </repositories>
   <build>
     <plugins>
       <plugin>
